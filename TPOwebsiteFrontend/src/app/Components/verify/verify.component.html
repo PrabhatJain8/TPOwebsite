@@ -1,0 +1,14 @@
+<div class="container myform">
+    <form class="w-25  mx-auto" #form="ngForm" (ngSubmit)="onSubmit()">
+        <h1 class="">Email Verification</h1>
+        <b>A 6 digit verification code is send to your email.Kindly enter the code for further process. </b>
+        <div class="form-group mt-3">
+            <label>Enter 6 digit verification code</label>
+            <input class="form-control"  #code="ngModel" [(ngModel)]="email.Subject" name="code" required pattern="[0-9]{6,6}" placeholder="000000">
+        </div>
+        <div [hidden]="code.valid || !code.touched">
+            <span class="text-danger">Enter the code</span>
+        </div>
+            <button type="submit" class="btn bg-dark text-light form-control mt-3" [disabled]="form.invalid">Verify</button>    
+    </form>
+</div>

@@ -1,0 +1,19 @@
+.box{
+
+    width:auto;
+    height: 450px;
+    background-color: aliceblue;
+    border-radius: 2%;
+    overflow: scroll;
+    padding: 5px;
+}
+.format-box{
+    margin:5px;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 5px 2px 8px;
+}
+.right{
+    float:right;
+    opacity: 0.5;
+}

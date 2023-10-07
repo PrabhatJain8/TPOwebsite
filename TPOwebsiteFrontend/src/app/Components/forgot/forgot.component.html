@@ -1,0 +1,14 @@
+<div class="container myform">
+    <form class="w-25  mx-auto" #form="ngForm" (ngSubmit)="onSubmit()">
+        <h1 class="">Email Verification</h1>
+        <b>Kindly Enter your Registered Email then a 6 digit verification code will be send to your email for furthur process.</b>
+        <div class="form-group mt-3">
+            <label>Enter your email</label>
+            <input type="email" class="form-control"  #emaill="ngModel" [(ngModel)]="email.EmailTo" name="emaill" required  placeholder="Please enter your registered email">
+        </div>
+        <div [hidden]="emaill.valid || !emaill.touched">
+            <span class="text-danger">valid Email is required</span>
+        </div>
+            <button type="submit" class="btn bg-dark text-light form-control mt-3" [disabled]="form.invalid">Send Code</button>    
+    </form>
+</div>

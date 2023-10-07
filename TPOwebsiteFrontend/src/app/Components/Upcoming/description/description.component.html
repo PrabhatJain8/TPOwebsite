@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="format mt-3 p-4">
+        <p><b>Location:</b> {{jobDescription.location}}</p>
+        <p><b>Package:</b> {{jobDescription.package}}</p>
+        <p><b>Job Role:</b> {{jobDescription.role}}</p>
+        <p><b>Selection Process:</b></p>
+        <p>{{jobDescription.selectionProcess}}</p>
+        <p><b>Skills Required:</b></p>
+        <p>{{jobDescription.skillsReq}}</p>
+        <p [hidden]="jobDescription.moreDetails == '' "><b>More Details:</b></p>
+        <p>{{jobDescription.moreDetails}}</p>
+    </div>
+</div>

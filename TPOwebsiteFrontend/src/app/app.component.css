@@ -1,0 +1,28 @@
+textarea
+{
+    min-height: 40em !important;
+}
+
+.myfloat{
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    top: 0;
+}
+.blue{
+    color:skyblue;
+}
+
+.rightName{
+    position: absolute;
+    right:50px;
+    top:5px;
+}
+@media only screen and (max-width:992px){
+    .rightName{
+        right:100px;
+    }
+    .myfloat{
+        right: 60px;
+    }
+}

@@ -1,0 +1,101 @@
+<div class="container">
+
+    <h1 class="text-center">ADD COMPANY</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+            <label>Company Name</label>
+            <input class="form-control" type="text" #companyName="ngModel" name="companyName" [(ngModel)]="upcoming.companyName" required>
+        </div>
+        <div [hidden]=" companyName.valid || !companyName.touched">
+            <span class="text-danger">Name Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>Start Date</label>
+            <input class="form-control" type="date" #sDate="ngModel" name="startDate" [(ngModel)]="upcoming.startDate" required>
+        </div>
+        <div [hidden]="sDate.valid || !sDate.touched">
+            <span class="text-danger">Start Date is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>End Date</label>
+            <input class="form-control" type="date" #eDate="ngModel" name="endDate" [(ngModel)]="upcoming.endDate" required>
+        </div>
+        <div [hidden]="eDate.valid || !eDate.touched" >
+            <span class="text-danger">End Date is required</span>
+        </div>
+        <div [hidden]="sDate.value <= eDate.value">
+            <span class="text-danger">End Date should be greater or equal</span>
+        </div>
+
+        <div class="form-group">
+            <label>Eligibility</label>
+            <textarea class="form-control" #eligible="ngModel" name="eligible" [(ngModel)]="upcoming.eligibility" required></textarea>
+        </div>
+        <div [hidden]="eligible.valid || !eligible.touched">
+            <span class="text-danger">Eligibility Field is required</span>
+        </div>
+
+        <h2 class="mt-3">Job Description</h2>
+
+        <div class="form-group">
+            <label>Location</label>
+            <input class="form-control" type="text" #location="ngModel" name="companyLoc" [(ngModel)]="upcoming.jobDesc.location" required>
+        </div>
+        <div [hidden]="location.valid || !location.touched">
+            <span class="text-danger">Location Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label >Package</label>
+            <input class="form-control" type="text" #package="ngModel" name="package" [(ngModel)]="upcoming.jobDesc.package" required>
+        </div>
+        <div [hidden]="package.valid || !package.touched">
+            <span class="text-danger">Package Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label >Job Role</label>
+            <input class="form-control" type="text" #role="ngModel" name="role" [(ngModel)]="upcoming.jobDesc.role" required>
+        </div>
+        <div [hidden]="role.valid || !role.touched">
+            <span class="text-danger">Job Role Field is required</span>
+        </div>
+
+        <div class="form-group">
+            <label >Selection Process</label>
+            <textarea class="form-control"  #sProcess="ngModel" name="sProcess" [(ngModel)]="upcoming.jobDesc.selectionProcess" required></textarea>
+        </div>
+        <div [hidden]="sProcess.valid || !sProcess.touched">
+            <span class="text-danger">Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label >Skills Required</label>
+            <textarea class="form-control"  #sRequired="ngModel" name="sRequired" [(ngModel)]="upcoming.jobDesc.skillsReq" required></textarea>
+        </div>
+        <div [hidden]="sRequired.valid || !sRequired.touched">
+            <span class="text-danger">Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>More Details</label>
+            <textarea class="form-control" name="details" [(ngModel)]="upcoming.jobDesc.moreDetails" ></textarea>
+
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn bg-dark text-light mt-3" [disabled]="form.invalid || sDate.value > eDate.value">Submit</button>
+    </form>
+</div>

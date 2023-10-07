@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h1 class="text-center">Enroll</h1>
+    <form class="w-25 mx-auto" #form="ngForm" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+            <label>Student Name</label>
+            <input class="form-control" type="text" #studentName="ngModel" name="studentName" [(ngModel)]="enroll.studentName" required>
+        </div>
+        <div [hidden]=" studentName.valid || !studentName.touched">
+            <span class="text-danger">Name Field is required</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>CGPA</label>
+            <input  class="form-control" type="number" min=0 #cgpa="ngModel" name="cgpa" [(ngModel)]="enroll.cgpa" required>
+        </div>
+        <div [hidden]="cgpa.valid || !cgpa.touched">
+            <span class="text-danger">CGPA is required and it can only be a number.</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>Backlogs</label>
+            <input  class="form-control" type="number" min=0 #back="ngModel" name="back" [(ngModel)]="enroll.backlog" required>
+        </div>
+        <div [hidden]="back.valid || !back.touched">
+            <span class="text-danger">Backlog is required and it can only be a number.</span>
+        </div>
+
+
+        <div class="form-group">
+            <label>Percentage</label>
+            <input  class="form-control" type="number" min=0 #per="ngModel" name="per" [(ngModel)]="enroll.percentage" required>
+        </div>
+        <div [hidden]="per.valid || !per.touched">
+            <span class="text-danger">Percentage is required and it can only be a number.</span>
+        </div>
+
+
+        <button type="submit" class="btn bg-dark text-light mt-3 form-control" [disabled]="form.invalid">Enroll</button>
+
+        
+
+    </form>
+</div>

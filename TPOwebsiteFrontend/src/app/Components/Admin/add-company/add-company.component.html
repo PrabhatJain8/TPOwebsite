@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h1 class="text-center">ADD COMPANY</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Company Name</label>
+            <input class="form-control" type="text" #companyName="ngModel" name="companyName" [(ngModel)]="company.name" required>
+        </div>
+        <div [hidden]=" companyName.valid || !companyName.touched">
+            <span class="text-danger">Name Field is required</span>
+        </div>
+        <div class="form-group">
+            <label>Company Address</label>
+            <input class="form-control" type="text" #companyAddress="ngModel" name="companyAddress" [(ngModel)]="company.company_Address" required>
+        </div>
+        <div [hidden]="companyAddress.valid || !companyAddress.touched">
+            <span class="text-danger">Address Field is required</span>
+        </div>
+
+        <div class="form-group">
+            <label>Number of Employees</label>
+            <input class="form-control" type="text" #Emp="ngModel" name="companyEmp"  [(ngModel)]="company.num_Employee" required>
+        </div>
+        <div [hidden]="Emp.valid || !Emp.touched">
+            <span class="text-danger">Employees Field is required</span>
+        </div>
+        <div class="form-group">
+            <label>Company Start Date</label>
+            <input class="form-control" type="date" #sDate="ngModel" name="companyDate" [(ngModel)]="company.start_Date" required>
+        </div>
+        <div [hidden]="sDate.valid || !sDate.touched">
+            <span class="text-danger">Date Field is required</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Company Details</label>
+            <textarea class="form-control" type="text" #DESC="ngModel" name="companyDescription" [(ngModel)]="company.description" required>
+            </textarea>
+        </div>
+        <div [hidden]=" DESC.valid || !DESC.touched">
+            <span class="text-danger">Details Field is required</span>
+        </div>
+
+        <button class="btn bg-dark text-light mt-3" type="submit" [disabled]="form.invalid">Submit</button>
+
+    </form>
+</div>

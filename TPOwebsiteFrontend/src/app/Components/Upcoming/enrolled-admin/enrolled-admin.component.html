@@ -1,0 +1,34 @@
+<div [hidden]="upcomingList.length !=0" class="text-center">
+    <span   class="text-danger"><b>No Enrolled Data is Present</b> </span>
+</div>
+
+<div [hidden]="upcomingList.length ==0" class="container text-center">
+
+    <div>
+        <h1 class="pb-3">ENROLLED COMPANIES</h1>
+         
+        <table class="table table-bordered w-50 mx-auto">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>Company Name</th>
+                <th>Action</th>               
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let comp of upcomingList; index as i">
+                
+                <th>{{i+1}}</th>
+                <td>{{comp.companyName}}</td>
+            
+                <td>
+                    <button class="btn bg-dark text-light" (click)="showList(comp)">Show List</button>
+                </td>
+                
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+</div>

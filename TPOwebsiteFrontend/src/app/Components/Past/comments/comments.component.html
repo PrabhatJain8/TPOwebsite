@@ -1,0 +1,19 @@
+
+<div [hidden]="company=='' " class="container">
+    <h1>{{company}} Comments</h1>
+    <div class="comment-box box my-3" >
+            <div class="format-box" *ngFor="let comment of commentList">
+                <span>🙎‍♂️<b class="text-primary">{{comment.userName}}</b>: <span class="right">{{comment.date}}</span></span>
+                <p>{{comment.msg}}</p>
+            </div>
+            
+    </div>
+    <form class="form-group" (ngSubmit)="addComment()">
+        <textarea  name="msg" class="form-control"placeholder="Write your comment" [(ngModel)]="comment.msg"></textarea>
+        <button class="btn bg-dark text-light mt-2" type="submit">Post</button>
+    </form>
+</div>
+
+<div [hidden]="company!= '' " class="text-center">
+    <p class="text-danger"><b>No Comments found</b></p>
+</div>
